@@ -1,1 +1,1 @@
-Diapositivas sobre HTML: https://mfvargas.github.io/pres-html/.
+Diapositivas sobre Leaflet: https://mfvargas.github.io/pres-leaflet/.
