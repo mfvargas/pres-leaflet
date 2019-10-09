@@ -40,7 +40,7 @@
 			<section id="leaflet-01">
 				<h2>Leaflet</h2>
 				<ul>
-					<p><a href="https://leafletjs.com/">Leaflet</a> es una biblioteca de programación en <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> para mapas en la Web.</p>
+					<p><a href="https://leafletjs.com/">Leaflet</a> es una biblioteca de programación en <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript (JS)</a> para mapas en la Web.</p>
 					<p>Es de <strong>código abierto</strong> y fue diseñada para funcionar en una gran variedad de dispositivos, incluyendo <strong>móviles</strong>.</p>
 					<p>Puede ser extendida a través de <a href="https://leafletjs.com/plugins.html">complementos</a>.</p>
 				</ul>
@@ -52,10 +52,17 @@
 					<p>Junto con <a href="https://openlayers.org/">OpenLayers</a> y <a href="https://developers.google.com/maps/documentation">Google Maps</a>, es una de las más bibliotecas más populares para programar mapas en la Web.</p>					
 				</ul>
 			</section>		
+			<section id="leaflet-03">
+				<h2>Leaflet</h2>
+				<ul>
+					<p>El código JS de Leaflet se llama desde <a href="https://whatwg.org/">HTML (Hypertext Markup Languaje)</a>.</p>
+					<p>La biblioteca JS se distribuye junto con un conjunto de <a href="https://www.w3.org/Style/CSS/">hojas de estilo (CSS)</a>.</p>
+				</ul>
+			</section>			
 			<section id="documentacion">
 				<h2>Documentación</h2>
 				<ul>
-					<p>La <a href="">referencia del API de Leaflet</a> contiene la documentación de las clases, métodos y demás elementos de programación.</p>
+					<p>La <a href="">referencia del API de Leaflet</a> contiene la documentación de las clases, métodos y demás componentes para la  programación en JS.</p>
 					<p>El sitio oficial contiene también un conjunto de <a href="https://leafletjs.com/examples.html">tutoriales y ejemplos</a>.</p>
 				</ul>
 			</section>	
@@ -63,25 +70,85 @@
 				<h2>Preparación para el uso</h2>
 				<p>De acuerdo con la <a href="https://leafletjs.com/examples/quick-start/">guía de inicio rápido</a>, para utilizar Leaflet en un sitio web, primero se debe incluir en el código HTML:</p>
 				<ul>
-					<p>Un enlace a la hoja CSS de Leaflet.</p>
-					<p>Un enlace a la biblioteca JavaScript.</p>
-					<p>Un elemento <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">div</a> para albergar el mapa.</p>					
+					<li>Un enlace a la hoja CSS de Leaflet.</li>
+					<li>Un enlace a la biblioteca JS.</li>
+					<li>Un elemento <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">div</a> para albergar el mapa.</li>					
 				</ul>
 			</section>	
 			<section id="preparacion-uso-02">
 				<h2>Preparación para el uso</h2>
-				<p>Los archivos JS y CSS de Leaflet pueden descargarse del <a href="https://github.com/Leaflet/Leaflet">repositorio de código fuente</a> o utilizarse <a href="https://leafletjs.com/download.html">a través de una red de distribución de contenidos (CDN)</a>.</p>
+				<p>Los archivos JS y CSS de Leaflet pueden accederse a través de:</p>
+				<ul>
+					<li>Descargas del <a href="https://github.com/Leaflet/Leaflet">repositorio de código fuente</a>.</li>
+					<li>Enlaces a una <a href="https://leafletjs.com/download.html">red de distribución de contenidos (CDN)</a>.</li>
+				</ul>
 			</section>									
 			<section id="preparacion-uso-03">
 				<h2>Preparación para el uso</h2>
-				<p>Es recomendable mantener en archivos separados el código de HTML, de CSS y de JavaScript.</p>
-			</section>						
-			<section id="clase-map">
-				<h2>La clase </h2>
+				<p>Como recomendación para los programadores, se sugiere mantener en archivos separados el código:</p>
 				<ul>
-					<p>La <a href="">referencia del API de Leaflet</a> contiene la documentación de las clases, métodos y demás elementos de programación.</p>
+					<li>HTML (*.html)</li>
+					<li>CSS (*.css)</li>
+					<li>JS (*.js)</li>
 				</ul>
-			</section>			
+			</section>
+			<section id="archivo-html-ejemplo">
+				<h2>Ejemplo de documento HTML con elementos para Leaflet</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+					&lt;!DOCTYPE html&gt;
+					&lt;html lang=&quot;es&quot;&gt;
+					&lt;head&gt;
+						&lt;meta charset=&quot;UTF-8&quot;&gt;
+						&lt;title&gt;Mapa&lt;/title&gt;   
+
+						&lt;!-- Hoja de estilos CSS de Leaflet --&gt;
+						&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/leaflet@1.5.1/dist/leaflet.css&quot; integrity=&quot;sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==&quot; crossorigin=&quot;&quot;/&gt;	
+						&lt;!-- Biblioteca JS de Leaflet --&gt;
+						&lt;script src=&quot;https://unpkg.com/leaflet@1.5.1/dist/leaflet.js&quot; integrity=&quot;sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==&quot; crossorigin=&quot;&quot;&gt;&lt;/script&gt;	
+						&lt;!-- Complemento Leaflet-providers --&gt;
+						&lt;script src=&quot;js/leaflet-providers.js&quot;&gt;&lt;/script&gt;	
+						
+						&lt;!-- Hoja de estilos CSS adicionales --&gt;
+						&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilos.css&quot;/&gt;			
+					&lt;/head&gt;
+					&lt;body&gt;
+						&lt;!-- Elemento div para contener el mapa --&gt;
+						&lt;div id=&quot;mapid&quot;&gt;&lt;/div&gt;	
+						
+						&lt;!-- C&oacute;digo principal en JS --&gt;
+						&lt;script src=&quot;js/scripts.js&quot;&gt;&lt;/script&gt;	
+					&lt;/body&gt;
+					&lt;/html&gt;
+				</code></pre>
+			</section>	
+			<section id="archivo-css-ejemplo">
+				<h2>Ejemplo de archivo CSS con selectores para Leaflet</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+					#mapid { 
+						height: 700px;
+						width:  700px;
+					}
+				</code></pre>
+			</section>				
+			<section id="clase-map">
+				<h2>La clase Map</h2>
+				<p>La clase <a href="https://leafletjs.com/reference-1.5.0.html#map-example">Map</a> es la clase central del API. Se utiliza para crear un mapa y manipularlo.</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					// Se inicializa un mapa con un centro y un nivel de acercamiento iniciales
+					var map = L.map('map', {
+						center: [51.505, -0.09],
+						zoom: 13
+					});						
+				</code></pre>
+			</section>
+			<section id="metodo-setView">
+				<h2>El método setView</h2>
+				<p>El método <a href="https://leafletjs.com/reference-1.5.0.html#map-setview">setView</a> asigna una vista (centro y nivel de acercamiento) y niveles de animación al mapa.</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					// Definición de la vista de un mapa
+					map.setView(L.latLng([10, -84]), 10);					
+				</code></pre>
+			</section>				
 			<section id="html-estructura">
 				<h2>HTML</h2>
 						<ul>
@@ -102,23 +169,6 @@
 				<h2>El Document Object Model</h2>
 						<ul>
 								<p><figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/500px-DOM-model.svg.png" alt="Elemento HTML"><figcaption><small>El DOM. Fuente: Wikimedia</small></figcaption></figure></p>
-						</ul>
-			</section>
-			<section id="html-ejemplo">
-				<h2>Ejemplo de documento HTML</h2>
-						<ul>
-								<pre><code class="hljs" data-trim contenteditable>
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;es&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;T&iacute;tulo del documento&lt;/title&gt;     
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- Contenido del documento --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-								</code></pre>
 						</ul>
 			</section>								
 			<section id="html-elementos">
