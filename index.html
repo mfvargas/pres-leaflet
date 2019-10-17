@@ -214,7 +214,70 @@
 						)}
 					)				
 				</code></pre>
-			</section>				
+			</section>
+			<section id="clase-geojson">
+				<h2>La clase GeoJSON</h2>
+				<p>La clase <a href="https://leafletjs.com/reference-1.5.0.html#geojson">GeoJSON</a> representa una capa de objetos GeoJSON.</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					var geojsonFeature = {
+						"type": "Feature",
+						"properties": {
+							"name": "Coors Field",
+							"amenity": "Baseball Stadium"
+						},
+						"geometry": {
+							"type": "Point",
+							"coordinates": [-104.99404, 39.75621]
+						}
+					};				
+
+					L.geoJSON(geojsonFeature).addTo(map);					
+				</code></pre>
+			</section>
+			<section id="archivos-geojson-01">
+				<h2>Archivos GeoJSON</h2>
+				<p>Si van a utilizarse archivos GeoJSON (*.geojson), estos deben estar publicados en un servidor web. Para pruebas, puede utilizarse el módulo <a href="https://docs.python.org/3/library/http.server.html">http.server</a> de Python, el cual está disponible desde la línea de comandos de Anaconda, con el comando:</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					python -m http.server 8888
+				</code></pre>
+				<p>Este módulo inicia un servidor web local que puede accederse en <a href="http://localhost:8888/">http://localhost:8888/</a></p>
+			</section>
+			<section id="archivos-geojson-02">
+				<h2>Archivos GeoJSON</h2>
+				<p>Pueden obtenerse y procesarse, por ejemplo, con comandos de <a href="https://gdal.org/">GDAL/OGR</a>:</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					ogr2ogr -f "GeoJSON" -t_srs EPSG:4326 -simplify 100 provincias.geojson WFS:"http://geos.snitcr.go.cr/be/IGN_5/wfs?" limiteprovincial_5k
+				</code></pre>
+			</section>
+			<section id="clase-geojson-jquery">
+				<h2>Capas de archivos GeoJSON en Leaflet</h2>
+				<p>Pueden procesarse con la función <a href="https://api.jquery.com/jQuery.getJSON/">getJSON de jQuery</a></p>
+				<pre><code class="hljs" data-trim contenteditable>
+					$.getJSON("provincias.geojson", geodata => {
+						L.geoJSON(geodata, {
+							style() {
+								return {
+									color: "#0000ff",
+									weight: 2,
+									fillOpacity: 0.0
+								};
+							}
+						}).addTo(map);
+					});					
+				</code></pre>
+			</section>			
+			<section id="jquery">
+				<h2>La biblioteca jQuery</h2>
+				<p><a href="https://jquery.com/">jQuery</a> es una biblioteca JS, de gran popularidad, que facilita el acceso al DOM, entre otras capacidades.</p>
+				<p>Antes de utilizarse, debe incluirse su enlace en el documento HTML:</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					&lt;!-- Enlace a biblioteca JQuery --&gt;
+					&lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;
+						integrity=&quot;sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=&quot;
+						crossorigin=&quot;anonymous&quot;&gt;
+					&lt;/script&gt;				
+				</code></pre>
+			</section>						
 			</div>
 		</div>
 
