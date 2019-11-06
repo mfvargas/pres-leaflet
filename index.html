@@ -293,12 +293,11 @@
 			</section>				
 			<section id="control-layers">
 				<h2>El control Layers</h2>
-				<p>El control <a href="https://leafletjs.com/reference-1.5.0.html#control-layers">Layers</a> le permite al usuario seleccionar la capa base del mapa y también activar y desactivar capas sobrepuestas (<em>overlay</em>).</p>
+				<p>El control <a href="https://leafletjs.com/reference-1.5.0.html#control-layers">Layers</a> le permite al usuario seleccionar la capa base del mapa y también activar y desactivar capas sobrepuestas.</p>
 				<pre><code class="hljs" data-trim contenteditable>
 					esriLayer = L.tileLayer.provider("Esri.WorldImagery").addTo(map);
 					osmLayer = L.tileLayer.provider("OpenStreetMap.Mapnik").addTo(map);
 					openRailwayLayer = L.tileLayer.provider("OpenRailwayMap").addTo(map);
-
 					var baseMaps = {
 						"ESRI World Imagery": esriLayer,
 						"OpenStreetMap": osmLayer    
@@ -306,6 +305,7 @@
 					var overlayMaps = {
 						"Open Railway": openRailwayLayer
 					};
+					
 					L.control.layers(baseMaps, overlayMaps).addTo(map);			
 				</code></pre>
 			</section>
