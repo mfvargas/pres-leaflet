@@ -298,6 +298,7 @@
 					esriLayer = L.tileLayer.provider("Esri.WorldImagery").addTo(map);
 					osmLayer = L.tileLayer.provider("OpenStreetMap.Mapnik").addTo(map);
 					openRailwayLayer = L.tileLayer.provider("OpenRailwayMap").addTo(map);
+					
 					var baseMaps = {
 						"ESRI World Imagery": esriLayer,
 						"OpenStreetMap": osmLayer    
@@ -305,7 +306,6 @@
 					var overlayMaps = {
 						"Open Railway": openRailwayLayer
 					};
-					
 					L.control.layers(baseMaps, overlayMaps).addTo(map);			
 				</code></pre>
 			</section>
