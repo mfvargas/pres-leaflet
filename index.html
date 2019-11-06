@@ -315,7 +315,16 @@
 				<pre><code class="hljs" data-trim contenteditable>
 					L.control.scale().addTo(map);			
 				</code></pre>
-			</section>				
+			</section>			
+			<section id="clase-tilelayer-wms">
+				<h2>La clase TileLayer.WMS</h2>
+				<p>La clase <a href="https://leafletjs.com/reference-1.5.0.html#tilelayer-wms">TileLayer.WMS</a> se utiliza para desplegar un servicio <a href="https://en.wikipedia.org/wiki/Web_Map_Service">WMS</a> en el mapa.</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					var wmsCantones = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
+						layers: 'limitecantonal_5k'
+					}).addTo(map);
+				</code></pre>
+			</section>					
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>
