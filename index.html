@@ -326,6 +326,17 @@
 					}).addTo(map);
 				</code></pre>
 			</section>					
+			<section id="clase-imageoverlay">
+				<h2>La clase Image.Overlay</h2>
+				<p>La clase <a href="https://leafletjs.com/reference-1.5.0.html#imageoverlay">Image.Overlay</a> se utiliza para cargar y desplegar una imagen sobre un área específica del mapa.</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					var temperaturaLayer = L.imageOverlay("bio1_cr.png", 
+						[[11.2197734290000000, -85.9790724540000042], 
+						[8.0364413690000003, -82.5540738239999996]], 
+						{opacity:0.5}
+					).addTo(map);
+				</code></pre>
+			</section>									
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>
