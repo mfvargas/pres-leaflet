@@ -291,6 +291,20 @@
 					<li><a href="https://leafletjs.com/reference-1.5.0.html#control-scale">Scale</a>: añade una escala.</li>
 				</ul>
 			</section>				
+			<section id="control layers">
+				<h2>El control Layers</h2>
+				<p>El control <a href="https://leafletjs.com/reference-1.5.0.html#control-layers">Layers</a> le permite al usuario seleccionar la capa base del mapa y también activar y desactivar capas sobrepuestas (<em>overlay</em>).</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					var baseLayers = {
+							"OpenStreetMap": osm
+					};
+					var overlays = {
+							"Roads": roadsLayer
+					};
+					L.control.layers(baseLayers, overlays).addTo(map);				
+				</code></pre>
+			</section>
+				
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>
