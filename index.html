@@ -358,7 +358,17 @@
 					&lt;h5&gt;Opacidad de la capa de temperatura: &lt;span id=&quot;span-opacity&quot;&gt;0.5&lt;/span&gt;&lt;/h5&gt;
 					&lt;input type='range' id='sld-opacity' min='0' max='1' step='0.1' value='0.5' onchange='updateOpacity();'&gt;
 				</code></pre>
-			</section>				
+			</section>		
+			<section id="dom-js">
+				<h2>Manejo del DOM</h2>
+				<p>La siguiente función JS modifica el valor del elemento <strong>span</strong> y el valor de la propiedad <a href="https://leafletjs.com/reference-1.5.0.html#imageoverlay-opacity">opacity</a>.</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					function updateOpacity() {
+						document.getElementById("span-opacity").innerHTML = document.getElementById("sld-opacity").value;
+						layer_image_temperatura.setOpacity(document.getElementById("sld-opacity").value);
+					}
+				</code></pre>
+			</section>								
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>
