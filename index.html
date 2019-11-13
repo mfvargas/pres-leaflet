@@ -256,15 +256,10 @@
 					$.getJSON("datos/asp.geojson", function(geodata) {
 						var layer_geojson_asp = L.geoJson(geodata, {
 							style: function(feature) {
-								return {
-									'color': "#00ff00",
-									'weight': 2,
-									'fillOpacity': 0.0
-								}
+								return {color': "#00ff00", 'weight': 2, 'fillOpacity': 0.0}
 							},
 							onEachFeature: function(feature, layer) {
-								var popupText = "Área protegida: " + feature.properties.nombre_asp + "<br>" +
-																"Categoría: " + feature.properties.cat_manejo;
+								var popupText = "Área protegida: " + feature.properties.nombre_asp + "<br>" + "Categoría: " + feature.properties.cat_manejo;
 								layer.bindPopup(popupText);
 							}			
 						}).addTo(map);
