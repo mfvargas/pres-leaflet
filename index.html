@@ -349,10 +349,10 @@
 				</code></pre>
 				<p><small>El archivo utilizado como ejemplo proviene de datos de la iniciativa <a href="https://www.worldclim.org/">WorldClim</a>. Hay versiones recortadas para Costa Rica en <a href="https://github.com/mfvargas/worldclim1-cr">https://github.com/mfvargas/worldclim1-cr</a>.</small></p>
 			</section>
-			<section id="dom">
+			<section id="dom-html">
 				<h2>Manejo del DOM</h2>
-				<p>El DOM puede utilizarse para agregar interactividad a los mapas a través de controles externos.</p>
-				<p>El siguiente bloque de código HTML declara un elemento <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">range</a> para controlar la opacidad de una capa raster.</p>
+				<p>El <a href="https://en.wikipedia.org/wiki/Document_Object_Model">DOM (Documento Object Model)</a>puede utilizarse para agregar interactividad a los mapas a través de controles externos.</p>
+				<p>El siguiente bloque de código HTML declara un elemento <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span">span</a> y un elemento <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">range</a> para controlar la opacidad de una capa raster.</p>
 				<pre><code class="hljs" data-trim contenteditable>
 					&lt;h5&gt;Opacidad de la capa de temperatura: &lt;span id=&quot;span-opacity&quot;&gt;0.5&lt;/span&gt;&lt;/h5&gt;
 					&lt;input type='range' id='sld-opacity' min='0' max='1' step='0.1' value='0.5' onchange='updateOpacity();'&gt;
