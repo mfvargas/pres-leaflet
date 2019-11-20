@@ -368,7 +368,37 @@
 						layer_image_temperatura.setOpacity(document.getElementById("sld-opacity").value);
 					}
 				</code></pre>
-			</section>
+			</section>				
+			<section id="complemento-leaflet-choropleth">
+				<h2>El complemento Leaflet-choropleth</h2>
+				<p>El complemento <a href="https://github.com/timwis/leaflet-choropleth">Leaflet-choropleth</a> simplifica el despliegue de <a href="https://es.wikipedia.org/wiki/Mapa_coropl%C3%A9tico">mapas de coropletas</a>.</p>
+				<pre><code class="hljs" data-trim contenteditable>
+					&lt;!-- Complemento Leaflet-choropleth --&gt;
+					&lt;script src=&quot;js/choropleth.js&quot;&gt;&lt;/script&gt;
+				</code></pre>
+			</section>	
+			<section id="complemento-leaflet-choropleth-js">
+				<h2>Ejemplo de código JS para el complemento Leaflet-choropleth</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+					$.getJSON('datos/provincias_nacimientos.geojson', function (geojson) {
+						var layer_geojson_provincias = L.choropleth(geojson, {
+							valueProperty: 'nacimiento',
+							scale: ['white', 'red'],
+							steps: 5,
+							mode: 'q',
+							style: {
+								color: '#fff',
+								weight: 2,
+								fillOpacity: 0.8
+							},
+							onEachFeature: function (feature, layer) {
+								layer.bindPopup('Provincia ' + feature.properties.provincia + '<br>' + feature.properties.nacimiento.toLocaleString() + ' nacimientos')
+							}
+						}).addTo(map);
+						control_layers.addOverlay(layer_geojson_provincias, 'Provincias (nacimientos)');	
+					});
+				</code></pre>
+			</section>				
 			<section id="ejemplo-mapa-leaflet">
 				<h2>Ejemplo de página con mapa</h2>
 				<img src="img/volcanes-webpage.png" alt="Mapa de volcanes de Costa Rica">
